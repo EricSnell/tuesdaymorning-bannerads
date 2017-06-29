@@ -12,18 +12,18 @@
     }
 
     #tuesday-ad__link {
-      /*background: #999;*/
       display: inline-block;
     }
 
     #tuesday-ad__container {
+      /*background: #999;*/
       background: url(img/graphics.png) no-repeat;
       width: 300px;
       height: 250px;
       position: relative;
       overflow: hidden;
       z-index: -100;
-      /*opacity: 0;  Hide ad on initial load, so animation won't run until everything is loaded */
+      opacity: 0;  /* Hide ad on initial load, so animation won't run until everything is loaded */
     }
 
     #tuesday-ad__popscicle {
@@ -99,7 +99,7 @@
 
       const tl1 = new TimelineMax();
 
-      tl1
+      tl1.to('#tuesday-ad__container', 1.4, { opacity: 1 })
         // Frame 2 Hot Savings
         .to('#tuesday-ad__logo', 0, { opacity: 0, ease: SteppedEase.config(1) }, '+=1')
         .to('#tuesday-ad__popscicle', 0, { opacity: 0, ease: SteppedEase.config(1) })
