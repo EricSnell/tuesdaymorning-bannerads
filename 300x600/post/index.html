@@ -29,7 +29,6 @@
     }
 
     #tuesday-ad__popsicle {
-      border: 1px solid black;
       background: url(img/graphics.png) -301px 0px;
       width: 242px;
       height: 415px;
@@ -37,14 +36,52 @@
       z-index: 1;
     }
 
+    #tuesday-ad__logo {
+      background: url(img/graphics.png) 0px -600px;
+      width: 270px;
+      height: 54px;
+      margin: 0 auto;
+      position: relative;
+      top: 165px;
+      opacity: 1;
+      z-index: 5;
+    }
     
+    .tuesday-ad-text {
+      background: url(img/graphics.png) -270px -600px;
+      width: 241px;
+      height: 105px;
+      position: absolute;
+      top: 165px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      opacity: 0;
+    }
+
+    #tuesday-ad__cta {
+      background: white;
+      width: 139px;
+      height: 24px;
+      margin: 280px auto 0;
+      position: relative;
+      z-index: 4;
+      opacity: 1;
+    }
+
+    #tuesday-ad__cta-text {
+      background: url(img/graphics.png) -2353px -600px;
+      width: 110px;
+      height: 9px;
+      position: absolute;
+      opacity: 1;
+    }
 
     .center {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
-
   
   </style>
 </head>
@@ -53,7 +90,7 @@
   <a href="http://tuesdaymorning.com" target="__blank" id="tuesday-ad__300x600">
     <div id="tuesday-ad__container">
       <div id="tuesday-ad__logo"></div>
-      <div class="tuesday-ad-text center"></div>
+      <div class="tuesday-ad-text"></div>
       <div class="center" id="tuesday-ad__popsicle"></div>
       <div id="tuesday-ad__cta">
         <div class="center" id="tuesday-ad__cta-text"></div>
@@ -68,23 +105,46 @@
 
       const tl1 = new TimelineMax({repeat: -1})
 
-      tl1 
-        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -543, backgroundPositionY: -18, ease: SteppedEase.config(1) }, '+=1')
+      tl1
+        // Hot Savings
+        .to('#tuesday-ad__logo', 0, { opacity: 0, ease: SteppedEase.config(1) }, '+=1')
+        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -543, backgroundPositionY: -18, ease: SteppedEase.config(1) })
+        .to('.tuesday-ad-text', 0, { opacity: 1, ease: SteppedEase.config(1) })
 
+        // Pet Accessories
         .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -785, ease: SteppedEase.config(1) }, '+=1')
+        .to('.tuesday-ad-text', 0, { backgroundPositionX: -511, width: 253, height: 92, ease: SteppedEase.config(1) })
 
+        // Linens
         .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -1055, ease: SteppedEase.config(1) }, '+=1')
+        .to('.tuesday-ad-text', 0, { backgroundPositionX: -764, width: 285, height: 45, ease: SteppedEase.config(1) })
 
+        // Crafts
         .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -1325, ease: SteppedEase.config(1) }, '+=1')
+        .to('.tuesday-ad-text', 0, { backgroundPositionX: -1049, width: 284, height: 40, ease: SteppedEase.config(1) })
 
+        // Back to Campus
         .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -1595, ease: SteppedEase.config(1) }, '+=1')
+        .to('.tuesday-ad-text', 0, { backgroundPositionX: -1333, width: 283, height: 92, ease: SteppedEase.config(1) })
 
-        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -1865, ease: SteppedEase.config(1) }, '+=1')
+        // And more
+        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -1866, width: 300, ease: SteppedEase.config(1) }, '+=1')
+        .to('.tuesday-ad-text', 0, { backgroundPositionX: -1616, width: 239, height: 114, ease: SteppedEase.config(1) })
 
+        // Hurry In
+        .to('#tuesday-ad__popsicle', 0, { opacity: 0, ease: SteppedEase.config(1) }, '+=1')
+        .to('.tuesday-ad-text', 0, { backgroundPositionX: -1855, width: 271, height: 213, ease: SteppedEase.config(1) })
 
+        // CTA
+        .to('.tuesday-ad-text', 0, { opacity: 0, ease: SteppedEase.config(1) }, '+=1.3')
+        .to('#tuesday-ad__container', 0, { background: '#67c7c2', ease: SteppedEase.config(1) })
+        .to('#tuesday-ad__logo', 0.4, { opacity: 1,  ease: SteppedEase.config(1) })
+        .to('.tuesday-ad-text', 0.4, { opacity: 1, backgroundPositionX: -2126, width: 227, height: 27, top: 233, ease: SteppedEase.config(1) })
+        .from('#tuesday-ad__cta', 1, { opacity: 0, top: 20, ease: Power3.easeOut }, '+=.4')
+        .to('#tuesday-ad__cta', 2, { opacity: 1, ease: SteppedEase.config(1) })
+        
 
-
-
+        tl1.seek('yo')
 
 
     })()
