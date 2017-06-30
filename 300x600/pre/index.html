@@ -30,10 +30,11 @@
     }
 
     #tuesday-ad__300x600 #tuesday-ad__popsicle {
-      background: url(img/graphics.png) -301px 0px;
+      background: url(img/graphics.png) -300px 0px;
       width: 242px;
       height: 415px;
       position: absolute;
+      top: 306px;
       z-index: 1;
     }
 
@@ -99,7 +100,6 @@
     </div>
   </a>
   
-
   <script src="js/TweenLite.min.js" type=text/javascript></script>
   <script src="js/CSSPlugin.min.js" type=text/javascript></script>
   <script src="js/EasePack.min.js" type=text/javascript></script>
@@ -107,32 +107,32 @@
   <script type="text/javascript">
     (function() {
 
-      const tl1 = new TimelineLite();
+      const tl1 = new TimelineLite({repeat: -1});
 
       tl1.to('#tuesday-ad__container', 1.4, { opacity: 1 })
         // Hot Savings
-        .to('#tuesday-ad__logo', 0, { opacity: 0, ease: SteppedEase.config(1) }, '+=1')
-        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -543, backgroundPositionY: -18, ease: SteppedEase.config(1) })
+        .to('#tuesday-ad__logo', 0, { opacity: 0, ease: SteppedEase.config(1) }, '+=.1')
+        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -543, backgroundPositionY: -7, width: 300, height: 598, ease: SteppedEase.config(1) })
         .to('.tuesday-ad-text', 0, { opacity: 1, ease: SteppedEase.config(1) })
 
         // Pet Accessories
-        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -785, ease: SteppedEase.config(1) }, '+=.7')
+        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -843, ease: SteppedEase.config(1) }, '+=.7')
         .to('.tuesday-ad-text', 0, { backgroundPositionX: -511, width: 253, height: 92, ease: SteppedEase.config(1) })
 
         // Linens
-        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -1055, ease: SteppedEase.config(1) }, '+=.7')
+        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -1143, ease: SteppedEase.config(1) }, '+=.7')
         .to('.tuesday-ad-text', 0, { backgroundPositionX: -764, width: 285, height: 45, ease: SteppedEase.config(1) })
 
         // Crafts
-        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -1325, height: 599, ease: SteppedEase.config(1) }, '+=.7')
+        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -1443, ease: SteppedEase.config(1) }, '+=.7')
         .to('.tuesday-ad-text', 0, { backgroundPositionX: -1049, width: 284, height: 40, ease: SteppedEase.config(1) })
 
         // Back to Campus
-        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -1595, height: 598 ,ease: SteppedEase.config(1) }, '+=.7')
+        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -1743, ease: SteppedEase.config(1) }, '+=.7')
         .to('.tuesday-ad-text', 0, { backgroundPositionX: -1333, width: 283, height: 92, ease: SteppedEase.config(1) })
 
         // And more
-        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -1866, height: 599, ease: SteppedEase.config(1) }, '+=.7')
+        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -2043, ease: SteppedEase.config(1) }, '+=.7')
         .to('.tuesday-ad-text', 0, { backgroundPositionX: -1616, width: 239, height: 114, ease: SteppedEase.config(1) })
 
         // Hurry In
