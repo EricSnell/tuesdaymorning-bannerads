@@ -25,6 +25,7 @@
       height: 600px;
       position: relative;
       overflow: hidden;
+      opacity: 0;
       z-index: -10;
     }
 
@@ -108,7 +109,7 @@
 
       const tl1 = new TimelineLite();
 
-      tl1
+      tl1.to('#tuesday-ad__container', 1.4, { opacity: 1 })
         // Hot Savings
         .to('#tuesday-ad__logo', 0, { opacity: 0, ease: SteppedEase.config(1) }, '+=1')
         .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -543, backgroundPositionY: -18, ease: SteppedEase.config(1) })
