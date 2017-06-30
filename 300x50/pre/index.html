@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>300x50</title>
+  <style>
+  
+    body {
+      margin: 0;
+    }
+
+    #tuesday-ad__300x50 {
+      display: inline-block;
+    }
+
+    #tuesday-ad__300x50 #tuesday-ad__container {
+      background: url(img/graphics.png) no-repeat;
+      width: 300px;
+      height: 50px;
+      position: relative;
+      overflow: hidden;
+      z-index: -100;
+    }
+
+    #tuesday-ad__300x50 #tuesday-ad__logo {
+      background: url(img/graphics.png) -300px 0px;
+      width: 68px;
+      height: 42px;
+      position: absolute;
+      left: 4px;
+      z-index: 1;
+    }
+
+    #tuesday-ad__300x50 #tuesday-ad__popsicle {
+      background: url(img/graphics.png) -368px 0px;
+      width: 25px;
+      height: 45px;
+      position: absolute;
+      left: 78px;
+      bottom: 4px;
+      z-index: 1;
+    }
+
+    #tuesday-ad__300x50 #tuesday-ad__text {
+      background: url(img/graphics.png) -393px 0px;
+      width: 129px;
+      height: 38px;
+      position: absolute;
+      right: 36px;
+    }
+
+    #tuesday-ad__300x50 #tuesday-ad__text:before,
+    #tuesday-ad__text:after {
+      display: block;
+      content: '';
+      background: url(img/graphics.png) -522px 0px;
+      width: 20px;
+      height: 14px;
+      position: absolute;
+      top: 1px;
+      z-index: 5;
+    }
+
+    #tuesday-ad__300x50 #tuesday-ad__text:before{
+      left: -26px;
+    }
+
+    #tuesday-ad__300x50 #tuesday-ad__text:after {
+      right: -26px;
+    }
+
+    #tuesday-ad__300x50 .center {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+  
+  </style>
+</head>
+<body>
+
+  <a href="http://tuesdaymorning.com" target="__blank" id="tuesday-ad__300x50">
+    <div id="tuesday-ad__container">
+      <div class="center" id="tuesday-ad__logo"></div>
+      <div id="tuesday-ad__popsicle"></div>
+      <div class="center" id="tuesday-ad__text"></div>
+    </div>
+  </a>
+  
+</body>
+</html>
