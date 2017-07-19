@@ -116,49 +116,51 @@
   <script type="text/javascript">
     (function() {
 
+      const container = document.querySelector('#tuesday-ad__container');
+      const text = container.querySelector('.tuesday-ad-text');
+      const popsicle = container.querySelector('#tuesday-ad__popsicle');
+      const logo = container.querySelector('#tuesday-ad__logo');
+      const logo_sm = container.querySelector('#tuesday-ad__logo-sm');
+      const cta = container.querySelector('#tuesday-ad__cta');
+
       const tl1 = new TimelineLite();
 
-      tl1.to('#tuesday-ad__container', 1.4, { opacity: 1 })
+      tl1.to(container, 1.4, { opacity: 1 })
         // Hot Savings
-        .to('#tuesday-ad__logo', 0, { opacity: 0, ease: SteppedEase.config(1) }, '+=1')
-        .to('#tuesday-ad__logo-sm', 0, { opacity: 1, ease: SteppedEase.config(1) })
-        .to('.tuesday-ad-text', 0, { opacity: 1, ease: SteppedEase.config(1) })
-        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -908, right: 40, width: 338, ease: SteppedEase.config(1) })
+        .set(logo, { opacity: 0, delay: 1 })
+        .set([text, logo_sm], { opacity: 1 })
+        .set(popsicle, { backgroundPositionX: -908, right: 40, width: 338 })
 
         // Pet Accessories
-        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -1246, ease: SteppedEase.config(1) }, '+=.7')
-        .to('.tuesday-ad-text', 0, { backgroundPositionX: -684, width: 383, height: 30, ease: SteppedEase.config(1) })
+        .set(popsicle, { backgroundPositionX: -1246, delay: 0.7 })
+        .set(text, { backgroundPositionX: -684, width: 383, height: 30 })
 
         // Linens
-        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -1584, ease: SteppedEase.config(1) }, '+=.7')
-        .to('.tuesday-ad-text', 0, { backgroundPositionX: -1067, width: 205, height: 30, left: 100, ease: SteppedEase.config(1) })
+        .set(popsicle, { backgroundPositionX: -1584, delay: 0.7 })
+        .set(text, { backgroundPositionX: -1067, width: 205, height: 30, left: 100 })
 
         // Crafts
-        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -1922, ease: SteppedEase.config(1) }, '+=.7')
-        .to('.tuesday-ad-text', 0, { backgroundPositionX: -1272, width: 215, left: 100, ease: SteppedEase.config(1) })
+        .set(popsicle, { backgroundPositionX: -1922, delay: 0.7 })
+        .set(text, { backgroundPositionX: -1272, width: 215, left: 100 })
 
         // Back To Campus
-        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -2260, ease: SteppedEase.config(1) }, '+=.7')
-        .to('.tuesday-ad-text', 0, { backgroundPositionX: -1487, width: 361, left: 50, ease: SteppedEase.config(1) })
+        .set(popsicle, { backgroundPositionX: -2260, delay: 0.7 })
+        .set(text, { backgroundPositionX: -1487, width: 361, left: 50 })
 
         // And More
-        .to('#tuesday-ad__popsicle', 0, { backgroundPositionX: -2598, ease: SteppedEase.config(1) }, '+=.7')
-        .to('.tuesday-ad-text', 0, { backgroundPositionX: -1848, width: 265, height: 29, left: 100, ease: SteppedEase.config(1) })
+        .set(popsicle, { backgroundPositionX: -2598, delay: 0.7 })
+        .set(text, { backgroundPositionX: -1848, width: 265, height: 29, left: 100 })
 
         // Hurry In
-        .to('#tuesday-ad__popsicle', 0, { opacity: 0, ease: SteppedEase.config(1) }, '+=.7')
-        .to('#tuesday-ad__logo-sm', 0, { opacity: 0, ease: SteppedEase.config(1) })
-        .to('.tuesday-ad-text', 0, { backgroundPositionX: -2113, width: 672, height: 34, left: 28, ease: SteppedEase.config(1) })
+        .set([popsicle, logo_sm], { opacity: 0, delay: 0.7 })
+        .set(text, { backgroundPositionX: -2113, width: 672, height: 34, left: 28 })
 
         // CTA
-        .to('.tuesday-ad-text', 0, { opacity: 0, ease: SteppedEase.config(1) }, '+=1.3')
-        .to('#tuesday-ad__container', 0, { background: '#67c7c2', ease: SteppedEase.config(1) })
-        .to('#tuesday-ad__logo', 0.4, { opacity: 1, left: 15, ease: SteppedEase.config(1) })
-        .to('.tuesday-ad-text', 0.4, { opacity: 1, backgroundPositionX: -2785, width: 227, height: 27, left: 432.5, top: 25, ease: SteppedEase.config(1) })
-        .from('#tuesday-ad__cta', 1, { opacity: 0, top: 30, ease: Power3.easeOut }, '+=.4')
-        .to('#tuesday-ad__cta-text', 2, { opacity: 1, ease: SteppedEase.config(1) })
-
-        tl1.seek('yo')
+        .set(text, { opacity: 0, delay: 1.3 })
+        .set(container, { background: '#67c7c2' })
+        .set(logo, { opacity: 1, left: 15, delay: 0.4 })
+        .set(text, { opacity: 1, backgroundPositionX: -2785, width: 227, height: 27, left: 432.5, top: 25, delay: 0.4 })
+        .from(cta, 1, { opacity: 0, bottom: 5, ease: Power3.easeOut }, '+=.4')
 
     })()
   </script>
