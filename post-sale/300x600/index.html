@@ -113,7 +113,8 @@
       const popsicle = container.querySelector('#tuesday-ad__popsicle');
       const logo = container.querySelector('#tuesday-ad__logo');
       const cta = container.querySelector('#tuesday-ad__cta');
-      const tl1 = new TimelineLite({repeat: -1});
+      
+      const tl1 = new TimelineLite();
 
       tl1.from(container, 1.4, { opacity: 0 })
         // Hot Savings
