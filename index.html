@@ -2,15 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=
-  , initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Tuesday Morning Banner Ads</title>
   <style>
 
     body {
       margin: 0;
       background: #333;
+    }
+
+    main { 
+      max-width: 850px;
+      margin: 40px auto 0;
     }
 
     iframe {
@@ -22,16 +26,19 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      margin: 0 auto;
     }
 
   </style>
 </head>
 <body>
-  <iframe src="post-sale/728x90" id="_728x90" width="728px" height="90px" scrolling="no"></iframe>
-  <div class="flex-container">
-    <iframe src="post-sale/160x600" id="_160x600" width="160px" height="600px" scrolling="no"></iframe>
-    <iframe src="post-sale/300x600" id="_300x600" width="300px" height="600px" scrolling="no"></iframe>
-    <iframe src="post-sale/300x250" id="_300x250" width="300px" height="250px" scrolling="no"></iframe>
-  </div>
+  <main>
+    <iframe src="post-sale/728x90" width="728px" height="90px" scrolling="no"></iframe>
+    <div class="flex-container">
+      <iframe src="post-sale/160x600" width="160px" height="600px" scrolling="no"></iframe>
+      <iframe src="post-sale/300x250" width="300px" height="250px" scrolling="no"></iframe>
+      <iframe src="post-sale/300x600" width="300px" height="600px" scrolling="no"></iframe>
+    </div>
+  </main>
 </body>
 </html>
