@@ -7,6 +7,10 @@
   <title>Tuesday Morning Banner Ads</title>
   <style>
 
+    :root {
+      font-size: 18px;
+    }
+
     html {
       height: 100%;
     }
@@ -14,7 +18,7 @@
     body {
       margin: 0;
       background: #fff;
-      background: linear-gradient(#787571,#242424);
+      background: radial-gradient(#787571,#242424);
       background-repeat: no-repeat;
       background-attachment: fixed;
     }
@@ -25,7 +29,8 @@
     }
 
     .container {
-      margin: 15px;
+      margin: 70px 15px 0;
+      position: relative;
       box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.4);
       transition: all 0.3s;
     }
@@ -35,8 +40,27 @@
       box-shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.4);
     }
 
+    .container:hover h3 {
+      top: 0.4em;
+    }
+
+    .container h3 {
+      background: #333;
+      font-family: 'helvetica neue', helvetica, arial, sans-serif;
+      font-weight: 400;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      color: #999;
+      margin: 0;
+      padding: 5px 15px;
+      position: absolute;
+      top: -1.6em;
+      transition: all 0.3s;
+      z-index: -1;
+    }
+
     main > .container {
-      margin: 0 auto 15px;
+      margin: 80px auto 0;
       display: block;
     }
 
@@ -77,19 +101,24 @@
 <body>
   <main>
     <div id="_728x90" class="container">
+      <h3>728x90</h3>
       <iframe src="post-sale/728x90" scrolling="no"></iframe>
     </div>
     <div class="flex-container">
       <div id="_160x600" class="container">
+        <h3>160x600</h3>
         <iframe src="post-sale/160x600" scrolling="no"></iframe>
       </div>
       <div id="_300x250" class="container">
+        <h3>300x250</h3>
         <iframe src="post-sale/300x250" scrolling="no"></iframe>
       </div>
       <div id="_300x600" class="container">
+        <h3>300x600</h3>
         <iframe src="post-sale/300x600" scrolling="no"></iframe>
       </div>
     </div>
   </main>
+
 </body>
 </html>
