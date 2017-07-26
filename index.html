@@ -7,9 +7,14 @@
   <title>Tuesday Morning Banner Ads</title>
   <style>
 
+    html {
+      height: 100%;
+    }
+
     body {
       margin: 0;
-      background: #333;
+      background: #fff;
+      background: linear-gradient(#787571,#242424);
     }
 
     main { 
@@ -20,6 +25,13 @@
     iframe {
       border: none;
       margin: 15px;
+      box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.4);
+      transition: all 0.3s;
+    }
+
+    iframe:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.4);
     }
     
     main > iframe {
